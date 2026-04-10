@@ -168,14 +168,15 @@ elif page.startswith("3️⃣"):
             f"- **Nutrition Profile:** Protein {r.Protein} g  |  Fiber {r.Fiber} g  |  GI {r.GI}"
         )
 
-    stores=pd.DataFrame({
-        "Food":np.repeat(df.Food.head(10),2),
-        "Store":np.tile(["Carrefour Dubai Marina","Spinneys Abu Dhabi"],20),
-        "Quality":np.random.choice(["High Integrity","Standard"],20,p=[0.8,0.2]),
-        "Price (AED)":np.random.randint(5,40,20)
+        stores = pd.DataFrame({
+        "Food": np.repeat(df.Food.head(10), 2),
+        "Store": np.tile(["Carrefour Dubai Marina", "Spinneys Abu Dhabi"], 10),
+        "Quality": np.random.choice(["High Integrity", "Standard"], 20, p=[0.8, 0.2]),
+        "Price (AED)": np.random.randint(5, 40, 20)
     })
     st.subheader("🇦🇪 Store Options (High‑Integrity Sources)")
     st.dataframe(stores)
+
 
     st.success(
         f"Your plan focuses on verified, nutrient‑dense foods to optimize **{user['goal'].replace('_',' ')}**, "
